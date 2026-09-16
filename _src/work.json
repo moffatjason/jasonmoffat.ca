@@ -4,7 +4,7 @@
       "title": "Games for cinema audiences",
       "employer": "Timeplay",
       "years": "2014 to 2019",
-      "role": "Lead game developer",
+      "role": "Lead developer",
       "cover": "img/work-timeplay.jpg",
       "intro": [
         "Timeplay ran a platform in Cineplex theatres where the audience plays on their phones, in sync with the big screen, before the movie starts. Led a small team building the games, both branded titles for advertisers on fixed campaign deadlines and the platform's own trivia and party formats.",
@@ -16,7 +16,7 @@
       "title": "Four educational titles",
       "employer": "BlackCherry Digital Media",
       "years": "2011 to 2013",
-      "role": "Game programmer",
+      "role": "Developer",
       "intro": [
         "BlackCherry was an Ottawa studio building commissioned educational games in Unity. Joined straight out of school and shipped four titles there across web, tablet, and mobile, from prototyping through launch support."
       ],
@@ -83,7 +83,7 @@
       "text": ["Creatubbles is a creative platform for kids. Built and maintained the voxel art pipeline from authoring tool to runtime, a character customization system with a large outfit and accessory library, a user-facing level editor, and procedurally generated voxel terrain.", "Also prototyped new mechanics with design on a regular cadence."]},
     "invent-dev": {"title": "VR architectural configurator", "employer": "Invent Dev", "years": "2019, contract", "role": "Lead developer", "type": "VR application · HTC Vive and Oculus",
       "text": ["A VR application for customizing architectural designs: change home layouts, place furniture from a tagged library with filters, and see it rendered at high fidelity. Architected the application, designed and implemented the UI and UX for layout changes and furniture placement, built the furniture library and its filtering, implemented the high-definition rendering paths, and designed the system for backend integration."]},
-    "casino": {"title": "Casino platforms", "employer": "Cloud Street Gaming and WGames", "years": "2019, contracts", "role": "Game developer", "type": "Multiplayer poker console · mobile slot platform",
+    "casino": {"title": "Casino platforms", "employer": "Cloud Street Gaming and WGames", "years": "2019, contracts", "role": "Developer and senior developer", "type": "Multiplayer poker console · mobile slot platform",
       "text": ["Two contracts in the same year. At Cloud Street Gaming, owned the art pipeline and asset integration for a multiplayer poker console deployed in live casinos, built the post-processing systems, designed game flow and animations, and overhauled the UI and UX while keeping the game logic running.", "At WGames, maintained a mobile slot-game platform, integrated art into the game templates, and rebuilt the system that loads games."]}
   }
 }

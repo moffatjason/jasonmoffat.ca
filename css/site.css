@@ -137,7 +137,6 @@
   textarea { min-height: 160px; resize: vertical; }
   input::placeholder, textarea::placeholder { color: var(--ink-3); }
   input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(63,227,212,.15); }
-  .hp { position: absolute; left: -9999px; }
   .send { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 4px; }
   button { cursor: pointer; }
   .connect .side { display: flex; flex-direction: column; gap: 22px; }

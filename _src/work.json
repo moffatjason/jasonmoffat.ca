@@ -4,7 +4,7 @@
       "title": "Games for cinema audiences",
       "employer": "Timeplay",
       "years": "2014 to 2019",
-      "role": "Lead developer",
+      "role": "Lead game developer",
       "cover": "img/work-timeplay.jpg",
       "intro": [
         "Timeplay ran a platform in Cineplex theatres where the audience plays on their phones, in sync with the big screen, before the movie starts. Led a small team building the games, both branded titles for advertisers on fixed campaign deadlines and the platform's own trivia and party formats.",
@@ -16,7 +16,7 @@
       "title": "Four educational titles",
       "employer": "BlackCherry Digital Media",
       "years": "2011 to 2013",
-      "role": "Developer",
+      "role": "Game developer",
       "intro": [
         "BlackCherry was an Ottawa studio building commissioned educational games in Unity. Joined straight out of school and shipped four titles there across web, tablet, and mobile, from prototyping through launch support."
       ],
@@ -77,13 +77,13 @@
       "text": ["Music has been a constant alongside games. Sound Table was the first finished track from a setup built around Ableton Live 9 with Operator, a Novation Launchpad, and a rack of Korg pads (the nanoSeries 2, KaossPad 3, KaossPad Quad, Kaossilator Pro, and the minis).", "The chain runs the Korg pads through a TC Electronic Impact Twin into Ableton and onto the Launchpad, which controls how each looped clip launches, with per-track volume and pan on the nanoKontrol."]}
   },
   "roles": {
-    "voxie-tactics": {"title": "Voxie Tactics", "employer": "Always Geeky Games", "years": "2022 to 2026", "role": "Senior developer", "type": "Free-to-play turn-based tactics · Windows, iOS, Android",
+    "voxie-tactics": {"title": "Voxie Tactics", "employer": "Always Geeky Games", "years": "2022 to 2026", "role": "Senior game developer", "type": "Free-to-play turn-based tactics · Windows, iOS, Android",
       "text": ["A free-to-play turn-based tactics game shipped to three platforms as a live service. Senior developer from the first commit of the Unity version, working with the lead developer on technical direction.", "Set up the Unity project, ported the legacy C++ codebase to C# and Unity, and built the modular voxel avatar system, with characters assembled from parts and a bulk conversion tool that brought the art library across.", "Brought battles onto Netcode for GameObjects with server-authoritative actions, then built the dedicated game servers on Unity Multiplay and the matchmaking behind them. Later moved server hosting to Rocket Science with a custom allocator in Cloud Code.", "Took the PC launcher and patcher from proof of concept to production, with S3 distribution, per-environment builds, and a Windows installer. Built the in-game store with in-app purchases on mobile and PC, and wired up analytics, remote config, Datadog logging, and crash reporting.", "Designed the studio's git flow and the GitHub Actions pipelines behind every client and server build, which carried straight over to Hyperflora. Over three years the studio shipped seasonal content and new game modes, including Titan Arena, on top of it."]},
-    "creatubbles": {"title": "Super Code Strike", "employer": "Creatubbles", "years": "September 2019 to October 2022", "role": "Senior developer", "type": "Creative platform for kids · voxel tools",
+    "creatubbles": {"title": "Super Code Strike", "employer": "Creatubbles", "years": "September 2019 to October 2022", "role": "Senior game developer", "type": "Creative platform for kids · voxel tools",
       "text": ["Creatubbles is a creative platform for kids. Built and maintained the voxel art pipeline from authoring tool to runtime, a character customization system with a large outfit and accessory library, a user-facing level editor, and procedurally generated voxel terrain.", "Also prototyped new mechanics with design on a regular cadence."]},
     "invent-dev": {"title": "VR architectural configurator", "employer": "Invent Dev", "years": "2019, contract", "role": "Lead developer", "type": "VR application · HTC Vive and Oculus",
       "text": ["A VR application for customizing architectural designs: change home layouts, place furniture from a tagged library with filters, and see it rendered at high fidelity. Architected the application, designed and implemented the UI and UX for layout changes and furniture placement, built the furniture library and its filtering, implemented the high-definition rendering paths, and designed the system for backend integration."]},
-    "casino": {"title": "Casino platforms", "employer": "Cloud Street Gaming and WGames", "years": "2019, contracts", "role": "Developer and senior developer", "type": "Multiplayer poker console · mobile slot platform",
+    "casino": {"title": "Casino platforms", "employer": "Cloud Street Gaming and WGames", "years": "2019, contracts", "role": "Game developer and senior game developer", "type": "Multiplayer poker console · mobile slot platform",
       "text": ["Two contracts in the same year. At Cloud Street Gaming, owned the art pipeline and asset integration for a multiplayer poker console deployed in live casinos, built the post-processing systems, designed game flow and animations, and overhauled the UI and UX while keeping the game logic running.", "At WGames, maintained a mobile slot-game platform, integrated art into the game templates, and rebuilt the system that loads games."]}
   }
 }

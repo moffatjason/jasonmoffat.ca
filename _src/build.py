@@ -148,12 +148,14 @@ def group_page(gid):
 
 def role_page(rid):
     r = DATA["roles"][rid]
+    videos = "".join(video_block(v) for v in r.get("videos", []))
     prose = "".join(f"<p>{e(t)}</p>" for t in r["text"])
     body = f"""
 <section class="page">
   <div class="wrap">
     <h1>{e(r['title'])}</h1>
     <div class="meta"><span><b>{e(r['employer'])}</b></span><span>{e(r['years'])}</span><span>{e(r['role'])}</span><span>{e(r['type'])}</span></div>
+    {f'<div class="videos">{videos}</div>' if videos else ""}
     <div class="prose">{prose}</div>
     {links_row(r.get("links"))}
     <div class="pager"><a href="../index.html#work">Back to all work</a><span></span></div>

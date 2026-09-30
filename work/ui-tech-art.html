@@ -2,13 +2,114 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UI and technical art · Jason Moffat</title>
-<meta name="robots" content="noindex">
-<meta http-equiv="refresh" content="0; url=../index.html">
-<link rel="canonical" href="https://jasonmoffat.ca/">
-<script>location.replace("../index.html");</script>
+<meta name="description" content="UI implementation, shaders, editor tooling, asset pipelines, and mobile work on Voxie Tactics and Hyperflora.">
+<link rel="icon" type="image/png" href="../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../css/site.css">
 </head>
 <body>
-<p><a href="../index.html">Continue to jasonmoffat.ca</a></p>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="../index.html">Jason Moffat</a>
+    <ul>
+      <li><a href="../index.html#hyperflora">Hyperflora</a></li>
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../index.html#how">Approach</a></li>
+      <li><a href="../index.html#connect">Connect</a></li>
+      <li><a class="cta" href="../jason-moffat-resume.pdf">Resume</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="crumbbar"><div class="wrap"><a class="home" href="../index.html">Home</a><span class="sep">/</span><a href="../index.html#work">Work</a><span class="sep">/</span><span class="here">UI and technical art</span></div></div>
+
+<section class="page">
+  <div class="wrap">
+    <h1>UI and technical art</h1>
+    <div class="meta"><span><b>Voxie Tactics and Hyperflora</b></span><span>2022 to 2026</span><span>UGUI · UI Toolkit</span><span>Shader Graph and HLSL</span><span>Editor tooling</span><span>iOS and Android</span></div>
+    <div class="prose">
+      <p>The engineering side of art and UI on two live Unity games. On Voxie Tactics, a free-to-play tactics game on Windows, iOS, and Android, that meant the 2025 UI overhaul in UGUI, the mobile UI port, the avatar shaders, and the asset tooling behind them. On Hyperflora, a top-down action roguelike on Steam, it means the UI Toolkit design system, custom URP renderer features, and the MagicaVoxel content pipeline.</p>
+    </div>
+
+    <div class="part">
+      <h2>UI implementation</h2>
+      <div class="prose">
+        <p>Hyperflora's UI is a gamepad-first UI Toolkit design system across 20 screens. Every terminal shares one frame and one focus ring, and input prompts swap between gamepad and keyboard glyphs at runtime. EditMode tests fail when a screen breaks the focus-ring or input-prompt standard.</p>
+      </div>
+      <div class="gallery">
+        <a href="../img/ui-tech-art/terminal-brew.jpg" target="_blank"><img src="../img/ui-tech-art/terminal-brew.jpg" alt="Hyperflora Brew terminal: recipe rack, still, pantry manifest, and utility belt, with gamepad prompts" loading="lazy"></a>
+        <a href="../img/ui-tech-art/terminal-landing-zone.jpg" target="_blank"><img src="../img/ui-tech-art/terminal-landing-zone.jpg" alt="Hyperflora Landing Zone terminal: supplies down, cargo up, and fuel tank panels" loading="lazy"></a>
+        <a href="../img/ui-tech-art/terminal-build.jpg" target="_blank"><img src="../img/ui-tech-art/terminal-build.jpg" alt="Hyperflora Build terminal: ship lines table with tabbed navigation" loading="lazy"></a>
+        <a href="../img/ui-tech-art/terminal-loadout.jpg" target="_blank"><img src="../img/ui-tech-art/terminal-loadout.jpg" alt="Hyperflora Loadout terminal: weapon slots and equipped kit readout, with keyboard prompts" loading="lazy"></a>
+        <a href="../img/ui-tech-art/hud.jpg" target="_blank"><img src="../img/ui-tech-art/hud.jpg" alt="Hyperflora combat HUD: vitality and shield, ability slots, and fuel readout over a dungeon room" loading="lazy"></a>
+        <a href="../img/ui-tech-art/terminal-pods.jpg" target="_blank"><img src="../img/ui-tech-art/terminal-pods.jpg" alt="Hyperflora Cultivation Pods terminal: a grid of pod cards in different states" loading="lazy"></a>
+      </div>
+      <div class="prose">
+        <p>On Voxie Tactics, led the 2025 UI overhaul end to end in UGUI, restyling every battle and menu screen. Built a view framework with playground scenes so each view could be developed in isolation, without booting login, matchmaking, and a server. Added UIFX effects, button animation, and click audio, and shipped the UI in English, French, and Brazilian Portuguese with an auto-localizing text component. Also built the in-game store UI, with dynamic categories, product cards, WebP thumbnails, and in-app purchases on mobile and PC.</p>
+        <p class="muted">Studio footage of the Voxie Tactics UI is available on request.</p>
+      </div>
+      <div class="videos"><div><div class="video"><iframe src="https://www.youtube-nocookie.com/embed/KAk3mlolLU4?rel=0" loading="lazy" allow="fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Voxie Tactics Unity launch trailer"></iframe></div><div class="caption">Voxie Tactics Unity launch trailer, May 2024.</div></div></div>
+    </div>
+
+    <div class="part">
+      <h2>Shaders and rendering</h2>
+      <div class="figure"><a href="../img/ui-tech-art/occlusion-reveal.jpg" target="_blank"><img src="../img/ui-tech-art/occlusion-reveal.jpg" alt="The player behind a pillar, shown through it as a tinted silhouette" loading="lazy"></a><div class="caption">Occlusion reveal. The player stands behind the pillar and reads through it as a tinted silhouette.</div></div>
+      <div class="prose">
+        <h3>Occlusion reveal (Hyperflora)</h3>
+        <p>A custom URP renderer feature. When a wall or pillar hides a character, the character is redrawn on top as a tinted silhouette inside a soft circle, and no wall material changes. An obstacles-only depth prepass gates the redraw, and per-pixel character depth keeps the silhouette from flickering at the edges.</p>
+        <h3>Light trail (Hyperflora)</h3>
+        <p>A second renderer feature that accumulates and blurs emissive pixels into a motion smear, composited over the frame. A palette LUT generator bakes the game's Resurrect 64 palette into a lookup texture.</p>
+        <h3>Avatar shaders (Voxie Tactics)</h3>
+        <p>Wrote the avatar color-replacement shader in Shader Graph, which recolors skin, hair, eyes, and secondary colors across more than 2,100 modular part assets, plus the current-turn outline and ghost and invisibility shaders driven by character traits. Built the ability and status-effect VFX on the Particle System, and turned on GPU instancing across every battle map tile material.</p>
+      </div>
+    </div>
+
+    <div class="part">
+      <h2>Editor tooling and asset pipeline</h2>
+      <ol class="steps">
+        <li><b>MagicaVoxel model</b>Rooms and props are authored as .vox files.</li>
+        <li><b>AssetPostprocessor</b>Import splits each model with its per-model split settings.</li>
+        <li><b>Per-tile prefabs</b>One prefab per tile, ready for a tileset.</li>
+        <li><b>Tessera</b>Tiles and constraints assemble the rooms.</li>
+        <li><b>Procedural rooms</b>Every run builds new floors from the same kit.</li>
+      </ol>
+      <div class="prose">
+        <p>Hyperflora's rooms start as MagicaVoxel models, and AssetPostprocessors turn them into per-tile prefabs on import. Editor tooling covers tilesets, palettes, and mineral budgets, plus an orthographic render studio and a dungeon overview capture tool.</p>
+        <p>On Voxie Tactics, brought Addressables into the project and moved avatar parts and battle maps onto addressable groups, with a custom window for finding any asset's address. Built an avatar part browser and creator, a map editor with placement validation, a rewards editor, and a batch capture tool that records transparent 256 by 256 icons for the UI. A scripted build step produces the Windows, iOS, and Android players with versioning.</p>
+      </div>
+    </div>
+
+    <div class="part">
+      <h2>Mobile</h2>
+      <div class="prose">
+        <p>Brought Voxie Tactics from PC to iOS and Android. Battle and menu UI were adapted for touch, safe areas, and orientation, and a canvas matcher switches CanvasScaler matching by screen aspect so layouts hold on phones and tablets. Mobile-only quality settings and frame-rate targets apply on device, and builds ship through fastlane to TestFlight and the Play Console.</p>
+        <p>Earlier mobile and casino work includes a mobile slot-game platform at WGames, where art was integrated into the game templates and the game-loading system rebuilt, and a multiplayer poker console for live casinos at Cloud Street Gaming, with the art pipeline, post-processing, and a UI and UX overhaul. Before that, five years at Timeplay shipping branded games played on audiences' phones on fixed campaign deadlines.</p>
+      </div>
+    </div>
+
+    <div class="part">
+      <h2>Standards and validation</h2>
+      <div class="prose">
+        <p>On Voxie Tactics, Odin Validator has run in CI since 2022, and any validation error or warning fails the build. On Hyperflora, EditMode test suites enforce the UI, input, economy, and save standards, so a broken focus ring or a missing input prompt is caught by a test instead of by a player.</p>
+      </div>
+    </div>
+
+    <div class="btns">
+      <a class="btn primary" href="https://store.steampowered.com/app/4538160" target="_blank" rel="noopener">Hyperflora on Steam</a>
+      <a class="btn" href="voxie-tactics.html">Voxie Tactics</a>
+      <a class="btn" href="../jason-moffat-resume.pdf">Resume</a>
+    </div>
+    <div class="pager"><a href="../index.html#work">Back to all work</a><span></span></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Jason Moffat</span>
+    <span><a href="../index.html#connect">Connect</a></span>
+  </div>
+</footer>
 </body>
 </html>

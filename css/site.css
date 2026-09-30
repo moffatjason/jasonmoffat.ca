@@ -184,3 +184,13 @@
   .tile .t { font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--ink); }
   .tile .k { font-size: 12px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.08em; }
   .cover img { width: 100%; aspect-ratio: 21/9; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); }
+
+  /* subpage sections (work/ui-tech-art.html) */
+  .page .part { display: flex; flex-direction: column; gap: 20px; padding-top: 36px; border-top: 1px solid var(--line); }
+  .page h2 { font-family: var(--display); font-size: clamp(22px, 2.4vw, 28px); font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; }
+  .page h3 { font-family: var(--display); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .figure img { width: 100%; border-radius: 8px; border: 1px solid var(--line); }
+  .steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; counter-reset: step; }
+  .steps li { counter-increment: step; flex: 1 1 150px; padding: 14px 16px; background: var(--bg-2); border: 1px solid var(--line); border-radius: 6px; font-size: 14px; color: var(--ink-2); }
+  .steps li::before { content: counter(step, decimal-leading-zero); display: block; font-family: var(--display); font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+  .steps li b { display: block; color: var(--ink); font-weight: 600; }

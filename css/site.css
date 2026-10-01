@@ -189,6 +189,23 @@
   .page .part { display: flex; flex-direction: column; gap: 20px; padding-top: 36px; border-top: 1px solid var(--line); }
   .page h2 { font-family: var(--display); font-size: clamp(22px, 2.4vw, 28px); font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; }
   .page h3 { font-family: var(--display); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .page .proj { display: flex; flex-direction: column; gap: 14px; padding: 12px 0 20px; }
+  .page .proj h3 { font-size: 21px; margin-bottom: 0; }
+  .page .proj .prose p b { color: var(--ink); font-weight: 600; }
+  .gallery figure { margin: 0; min-width: 0; }
+  .gallery figcaption, .clips figcaption { font-size: 13px; color: var(--ink-3); margin-top: 6px; line-height: 1.45; }
+  .gallery.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .gallery.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @media (max-width: 860px) { .gallery.three, .gallery.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 520px) { .gallery.three, .gallery.four { grid-template-columns: 1fr; } }
+  .gallery.r43 img { aspect-ratio: 4 / 3; }
+  .gallery.natural { align-items: end; }
+  .gallery.natural img { aspect-ratio: auto; }
+  .gallery.contain img { aspect-ratio: 4 / 3; object-fit: contain; padding: 10px; }
+  .clips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 640px) { .clips { grid-template-columns: 1fr; } }
+  .clips figure { margin: 0; min-width: 0; }
+  .clips video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; border: 1px solid var(--line); background: var(--bg-2); }
   .figure img { width: 100%; border-radius: 8px; border: 1px solid var(--line); }
   .steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; counter-reset: step; }
   .steps li { counter-increment: step; flex: 1 1 150px; padding: 14px 16px; background: var(--bg-2); border: 1px solid var(--line); border-radius: 6px; font-size: 14px; color: var(--ink-2); }
